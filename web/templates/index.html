@@ -1,0 +1,133 @@
+<html>
+    <head>
+        <title>Centurion</title>
+
+
+        <link href='http://fonts.googleapis.com/css?family=Avenir' rel='stylesheet' type='text/css'>
+
+
+        <!-- Portable References -->
+        <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css')}}">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    </head>
+    <body>
+    <!----- HEADER START---> 
+    <header id="header">
+        <div class="content">
+        <div id="logo"><a href=""> CENTURION </a></div><div id="small-logo"><a href="">Consulting Group</a></div>
+        <nav id="nav">
+         <ul>
+         <li><a href="#slide1" class="active" title="Next Section" >Slide 1</a></li>
+         <li><a href="#slide2" title="Next Section">Slide 2</a></li>
+         <li><a href="#slide3" title="Next Section">Slide 3</a></li>
+         <li><a href="#slide4" title="Next Section">Slide 4</a></li>
+         <li><a href="#slide5" title="Next Section">Slide 5</a></li>
+         </ul>
+        </nav>
+        </div>
+    </header>
+    <!----- SLIDES START ---> 
+     <div id="slide1">
+     <div class="title-content">
+     <h2>Advanced Technology Brief:</h2>
+     <h1>Multilingual Conversational User Interface</h1>
+     </div> 
+     </div> 
+     <div id="slide2">
+     <div class="content" >
+     <!-- <div class="slide-title-bg"> -->
+     <div class="slide-title">&nbsp;&nbsp;What I Will Show You Today</div>
+     <!-- </div> -->
+     <div class="slide-content">
+        <ul>
+        <li>A prototype example of a conversational user interface - a chat bot</li>
+        <ul>
+            <li>Cloud-hosted artifical intelligence to determine intent and guide conversations with customers</li>
+            <li>On-demand translation of more than 100 languages, automatically detected</li>
+            <li>Interaction through typed text or spoken word</li>
+            <li>Responsive design - can run on PC, Kiosk, tablet, or phone</li>
+        </ul>
+        <p/>
+        <li>Prototype implements two use cases:</li>
+        <ul>
+            <li>New Application:  Collects customer information, validates documents & completes applicaiton</li>
+            <li>Revised Application: Looks up existing customer information & revises application</li>
+            <li>Both use case may be executed by either speech or text in English or by text in any other supported language</li>
+        </ul>
+        </ul>
+     </div>
+     </div> 
+     </div> 
+     <div id="slide3">
+     <div class="content">
+     <div class="slide-title">&nbsp;&nbsp;Why I Am Showing You This</div>
+     <div class=slide-content>
+        <ul>
+            <li>SSA field offices must service large numbers of non-English speaking customers.  We would like to make it easier to: </li>
+            <ul>
+                <li>Interact with them in their native language when possible</li>
+                <li>Automatically perform a cursory validation of a customer's supporting documents</li>
+                <li>Use the information gathered in the conversation to fill out an applicaiton</li>
+            </ul>
+            <p/>
+            <li><b>Make productive use of the customer's time spent on line</b></li>
+            <p/>
+            <li><b>Maximize the value of the time spent in human interaction</b></li>
+        </ul>
+     </div>
+     </div> 
+     </div> 
+     <div id="slide4">
+     <div class="content">
+     <div class="slide-title">&nbsp;&nbsp;The Fine Print</div>
+     <div class=slide-content>
+        <ul>
+            <li>Prototype is implemented with Amazon Lex, but may be ported to other platforms with miminal effort</li>
+            <ul>
+                <li class="little-cost">Amazon cost: 0.4&cent; per speech request / 0.075&cent; per text request</li>
+            </ul>
+            <li>Supported language translation providers: Amazon, Google, Microsoft – other providers as desired</li>
+            <ul><li class="little-cost">Amazon cost0.015&cent; per character translated ($15/million)</li></ul>
+            <li>User interface is 100% HTML/CSS</li>
+            <ul>
+                <li class="little-cost">No license cost</li>
+                <li class="little-cost">Cross-platform & natively supports multiple screen sizes</li>
+            </ul>
+            <li>Addtional workflows can be easily and incrementally developed</li>
+            <li>The Catch: Non-english spoken word interaction is difficult and will required more development to be effective</li> 
+        </ul>
+     </div>
+     </div> 
+     </div> 
+     <div id="slide5">
+     <div class="content">
+     <div class="slide-title">&nbsp;&nbsp;...Without Further Ado - <a href="http://localhost:4000" target="_blank">The Demo</a></div>
+     </div> 
+     </div> 
+     <!----- SLIDES END --->    
+
+    </body>
+
+    <script type="text/javascript">
+        $(document).ready(function() {
+            $('a[href*="#"]').each(function() {
+                if (location.pathname.replace(/^\//,'') == this.pathname.replace(/^\//,'')
+                    && location.hostname == this.hostname
+                    && this.hash.replace(/#/,'') ) {
+                        var $targetId = $(this.hash), $targetAnchor = $('[name=' + this.hash.slice(1) +']');
+                        var $target = $targetId.length ? $targetId : $targetAnchor.length ? $targetAnchor : false;
+                        if ($target) {
+                            var targetOffset = $target.offset().top;
+                            $(this).click(function() {
+                                $("#nav li a").removeClass("active");
+                                $(this).addClass('active');
+                                $('html, body').animate({scrollTop: targetOffset}, 1000);
+                                return false;
+                        });
+                    }
+                }
+            });
+
+        });
+    </script>
+</html>
